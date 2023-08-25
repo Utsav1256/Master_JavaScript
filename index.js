@@ -1,6 +1,14 @@
-console.log("hey 1");
-console.log("hey 2");
-setTimeout(function() {
-    console.log("hey 3");
-}, 0)
-console.log("hey 4");
+var ans = new Promise((resolve, reject) => {
+  if (false) {
+    return resolve();
+  } else {
+    return reject();
+  }
+});
+ans
+  .then(function () {
+    console.log("resolve hogaya tha");
+  })
+  .catch(function () {
+    console.log("reject hua tha");
+  });
