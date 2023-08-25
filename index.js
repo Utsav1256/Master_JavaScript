@@ -1,14 +1,16 @@
-var ans = new Promise((resolve, reject) => {
-  if (false) {
+let ans = new Promise((resolve, reject) => {
+  let n = Math.floor(Math.random() * 10);
+  if (n < 5) {
     return resolve();
   } else {
     return reject();
   }
 });
+
 ans
   .then(function () {
-    console.log("resolve hogaya tha");
+    console.log("below");
   })
   .catch(function () {
-    console.log("reject hua tha");
+    console.log("above");
   });
