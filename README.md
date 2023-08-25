@@ -82,6 +82,9 @@ setTimeout(function() {}, 2000)
 - line_2 ye `async` code hai kyuki `setTimeout` hai, to ise side me move kar diya jayega, ki tum iss separate space me chalo aaram se
 - line_3 ye line `turant chal jayegi` (2sec baad nahi)
 - agar 2sec baad chalana hai line_3 ke code ko, to use `callback`(function) ke andar likh do
+- `callback` hamesha ek function hota hai, 
+- ye sirf tub chalta hai jab `asynCode` ka complition ho jata hai
+- function() {} -> to ye function 2sec baad hi chalega.
 
 ```js
 console.log("hey 1");
@@ -91,13 +94,14 @@ setTimeout(function() {
 }, 0)
 console.log("hey 4");
 ```
----
-o/p: </br>
-hey 1
-hey 2
-hey 4
-hey 3
 
+o/p: </br>
+hey 1</br>
+hey 2</br>
+hey 4</br>
+hey 3</br>
+
+---
 ### Q-> Ab iss setTimeout ke andar wale function ko callBack kyu kehte hai??
 ```js
 setTimeout(function() {
@@ -135,5 +139,27 @@ setTimeout(function() {
 - tab hi, uss asyncCode ko side stack me se main stack me laya jayega.
 
 - ye check karna aur side-stack se code ko main-stack me lane ka kaam `Event-loop` karta hai.
+
+---
+
+### request & response
+
+- Ab dekho ->
+
+```js
+fetch
+axios
+promises
+setTimeout
+setInterval
+```
+- ye sare☝ async hai
+- ye request ko bhejte hai
+- jab request complete ho jaye to uska answer yaha 👇 milta hai :
+```js
+then catch
+callbacks
+async await
+```
 
 ---
