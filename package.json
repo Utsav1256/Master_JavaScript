@@ -1,0 +1,12 @@
+{
+  "name": "master_javascript",
+  "version": "1.0.0",
+  "description": "---\r ## Async JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Utsav",
+  "license": "ISC"
+}
