@@ -288,8 +288,10 @@ reject hua tha
 
 Problem:
 
-- user will ask fora number b/w 0 to 9,
+- user will ask for a number b/w 0 to 9,
 - and if the number is below 5 resolve, if not reject.
+
+Solution:
 
 ```js
 let ans = new Promise((resolve, reject) => {
@@ -309,3 +311,57 @@ ans
     console.log("above");
   });
 ```
+
+---
+
+Problem:
+
+- sabse pehle ghar par aao
+- gate kholo aur gate lagao
+- khana pakao
+- khana khao
+- sojao
+
+Solution:
+
+```js
+let pr1 = new Promise((resolve, reject) => {
+  return resolve("Sabse pehle ghar par aao");
+});
+
+let pr2 = pr1.then(function (data) {
+  console.log(data);
+  return new Promise((resolve, reject) => {
+    return resolve("gate kholo aur gate lagao");
+  });
+});
+
+let pr3 = pr2.then(function (data) {
+  console.log(data);
+  return new Promise((resolve, reject) => {
+    return resolve("khana pakao");
+  });
+});
+
+let pr4 = pr3.then(function (data) {
+  console.log(data);
+  return new Promise((resolve, reject) => {
+    resolve("khana khao");
+  });
+});
+
+let pr5 = pr4.then(function (data) {
+  console.log(data);
+  return new Promise((resolve, reject) => {
+    resolve("sojao");
+  });
+});
+
+pr5.then(function (data) {
+  console.log(data);
+});
+```
+
+- this can be called as Promise chaining.
+
+---
